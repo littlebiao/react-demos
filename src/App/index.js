@@ -3,6 +3,9 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import Menus from './components/Menu';
 import 'antd/dist/antd.css';
 
+import TestContext from './modules/Context'
+import Refs from './modules/Refs'
+
 import './style.scss';
 
 function App() {
@@ -13,9 +16,10 @@ function App() {
 				<Menus />
 				<div className="content-wrap">
 					<Switch>
-						<Route exact path="/" component={() => <div>home</div>}/>
-						<Route path="/context" component={() => <div>test</div>} />
-						<Route path="/test" component={() => <div>test2</div>} />
+						<Route exact path="/" component={() => <div style={{ textAlign: 'center', fontSize: 32 }}>Welcom</div>}/>
+						<Route exact path="/context" component={TestContext} />
+						<Route exact path="/refs" component={Refs} />
+
 						<Redirect to="/" />
 					</Switch>
 				</div>
